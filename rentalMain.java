@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class rentalMain {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner (System.in);
         int pilihan;
 
         LinkedListTransaksi ll = new LinkedListTransaksi();
@@ -30,11 +30,40 @@ public class rentalMain {
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++");
                     System.out.println("Daftar Kendaraan Rental Serba Serbi:");
                     System.out.println("++++++++++++++++++++++++++++++++++++++");
-                    ll.p();
-                case 2: 
-                }
+                  
+                    case 2:
+                    System.out.print("\nNama Peminjam: ");
+                    String namaPeminjam = sc.nextLine();
+                    System.out.println("Pilih Kendaraan (masukkan nomor index): ");
+                    for (int i = 0; i < rental.length; i++) {
+                        System.out.println(i + ". " + rental[i]);
+                    }
+                    int kendaraanIndex = sc.nextInt();
+                    System.out.print("Lama Pinjam (hari): ");
+                    int lamaPinjam = sc.nextInt();
+                    sc.nextLine();  // Consume newline
+
+                    transaksi transaksi = new transaksi(namaPeminjam, lamaPinjam, rental[kendaraanIndex]);
+                    ll.addTransaksi(transaksi);
+                    System.out.println("Transaksi berhasil ditambahkan.");
+                    break;
+                case 3:
+                    System.out.println("\nSeluruh Transaksi:");
+                    ll.displayAllTransaksi();
+                    break;
+                case 4:
+                    System.out.println("\nMengurutkan transaksi berdasarkan No TNKB...");
+                    ll.sortTransaksiByNoTNKB();
+                    System.out.println("Transaksi berhasil diurutkan.");
+                    break;
+                case 5:
+                    System.out.println("Keluar.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+                    break;
             } while(pilihan != -1);
 
-
+        }
     }
 }
