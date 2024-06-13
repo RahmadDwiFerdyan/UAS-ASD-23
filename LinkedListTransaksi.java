@@ -1,37 +1,45 @@
-import java.util.LinkedList;
-
-public class LinkedListTransaksi {
-    private LinkedList<TransaksiRental> transaksiList;
-
+class LinkedListTransaksi {
+    node head;
 
     public LinkedListTransaksi() {
-        this.transaksiList = new LinkedList<>();
+        head = null;
     }
 
- 
-    public void tambahTransaksi(String namaPeminjam, int lamaPinjam, BarangRental barangRental) {
-        TransaksiRental transaksiBaru = new TransaksiRental(namaPeminjam, lamaPinjam, barangRental);
-        transaksiList.add(transaksiBaru);
-    }
-
-    
-   
-    public TransaksiRental cariTransaksi(int kodeTransaksi) {
-        for (TransaksiRental transaksi : transaksiList) {
-            if (transaksi.getKodeTransaksi() == kodeTransaksi) {
-                return transaksi;
-            }
-        }
-        return null; 
-    }
-
-    public void hapusTransaksi(int kodeTransaksi) {
-        TransaksiRental transaksi = cariTransaksi(kodeTransaksi);
-        if (transaksi != null) {
-            transaksiList.remove(transaksi);
-            System.out.println("Transaksi dengan kode " + kodeTransaksi + " berhasil dihapus.");
+    public void addTransaksi(transaksi transaksi) {
+        node newnode = new node(transaksi);
+        if (head == null) {
+            head = newnode;
         } else {
-            System.out.println("Transaksi dengan kode " + kodeTransaksi + " tidak ditemukan.");
+            node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newnode;
         }
+    }
+
+    public void tampilTransaksi() {
+        node current = head;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+
+    public void sortTransaksiByNoTNKB() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        boolean tukar;
+        
+        do {
+            tukar = false;
+            node current = head;
+            node previous = null;
+            while (current.next != null) {
+                
+            }
+        } while (tukar);
     }
 }

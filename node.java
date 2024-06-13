@@ -4,16 +4,10 @@ class node {
     public String noTNKB;
     public String namaKendaraan;
     public String jenisKendaraan;
-    public int tahun;
-    public int biayaSewa;
+    public String tahun;
 
-    public node(String noTNKB, String namaKendaraan, String jenisKendaString, int tahun, int biayaSewa) {
+    public node(transaksi data) {
         this.data = data;
-        this.noTNKB = noTNKB;
-        this.namaKendaraan = namaKendaraan;
-        this.jenisKendaraan = jenisKendaraan;
-        this.tahun = tahun;
-        this.biayaSewa = biayaSewa;
         this.next = null;
     }
 }
