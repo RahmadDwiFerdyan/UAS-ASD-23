@@ -41,7 +41,7 @@ public class rentalMain {
                     int kendaraanIndex = sc.nextInt();
                     System.out.print("Lama Pinjam (hari): ");
                     int lamaPinjam = sc.nextInt();
-                    sc.nextLine();  // Consume newline
+                    sc.nextLine(); 
 
                     transaksi transaksi = new transaksi(namaPeminjam, lamaPinjam, rental[kendaraanIndex]);
                     ll.addTransaksi(transaksi);
