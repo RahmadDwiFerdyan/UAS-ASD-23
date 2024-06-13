@@ -49,10 +49,10 @@ public class rentalMain {
                     break;
                 case 3:
                     System.out.println("\nSeluruh Transaksi:");
-                    ll.displayAllTransaksi();
+                    ll.tampilTransaksi();
                     break;
                 case 4:
-                    System.out.println("\nMengurutkan transaksi berdasarkan No TNKB...");
+                    System.out.println("\nMengurutkan transaksi berdasarkan No TNKB");
                     ll.sortTransaksiByNoTNKB();
                     System.out.println("Transaksi berhasil diurutkan.");
                     break;
